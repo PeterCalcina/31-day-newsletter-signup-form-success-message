@@ -1,0 +1,416 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+  /* Paleta de colores */
+  --color-tomato: hsl(4, 100%, 67%);
+  --color-dark-slate-grey: hsl(234, 29%, 20%);
+  --color-charcoal-grey: hsl(235, 18%, 26%);
+  --color-grey: hsl(231, 7%, 60%);
+  --color-white: hsl(0, 0%, 100%);
+
+  /* Tipografia */
+  --font-roboto: 'Roboto', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-size-paragraphs: 16px;
+}
+
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: var(--font-roboto);
+  font-size: var(--font-size-paragraphs);
+  color: var(--color-dark-slate-grey);
+  background-color: var(--color-charcoal-grey);
+}
+
+.card__subscribe_container {
+  display: flex;
+  width: 850px;
+  height: 550px;
+  padding: 20px;
+  border-radius: 25px;
+  background: var(--color-white);
+  box-shadow: 5px 10px 20px 0px var(--color-dark-slate-grey);
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.card__subscribe_container.success {
+  opacity: 0;
+}
+
+.card__subscribe_container .card__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 55%;
+  padding-inline: 30px;
+}
+
+.card__subscribe_container .card__info .card__info__title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.card__subscribe_container .card__info .card__info__description {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.card__subscribe_container .card__info .card__info__plus_items {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.card__subscribe_container .card__info .card__info__plus_items li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card__subscribe_container .card__info .card__info__plus_items li img {
+  width: 20px;
+  height: 20px;
+}
+
+.card__subscribe_container .card__info .card__info__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card__subscribe_container .card__info .card__info__form .form__input__group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.card__subscribe_container .card__info .card__info__form .form__input__group.error {
+  animation: display_shake 0.5s ease;
+}
+
+.card__subscribe_container .card__info .card__info__form .form__input__group label,
+.card__subscribe_container .card__info .card__info__form .form__input__group .error_message {
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+}
+
+.card__subscribe_container .card__info .card__info__form .form__input__group .error_message {
+  color: var(--color-tomato);
+  opacity: 0;
+}
+
+.card__subscribe_container .card__info .card__info__form .form__input__group .error_message.active {
+  opacity: 1;
+}
+
+.card__subscribe_container .card__info .card__info__form .form__input__group .form__input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid var(--color-grey);
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.card__subscribe_container .card__info .card__info__form .form__input__group .form__input::placeholder {
+  color: var(--color-grey);
+}
+
+.card__subscribe_container .card__info .card__info__form .form__input__group .form__input:hover {
+  border-color: var(--color-dark-slate-grey) !important;
+}
+
+.card__subscribe_container .card__info .card__info__form .form__input__group .form__input:focus {
+  outline: none;
+  border-color: var(--color-dark-slate-grey) !important;
+  background-color: var(--color-white) !important;
+  color: var(--color-dark-slate-grey) !important;
+}
+
+.card__subscribe_container .card__info .card__info__form .form__input__group .form__input.error {
+  border-color: var(--color-tomato);
+  background-color: color-mix(in srgb, var(--color-tomato) 15%, var(--color-white) 85%);
+  color: var(--color-tomato);
+}
+
+.form__button {
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-dark-slate-grey);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form__button:hover {
+  background: linear-gradient(45deg,
+      color-mix(in srgb, var(--color-grey) 40%, var(--color-tomato) 60%) 0%,
+      var(--color-tomato) 100%);
+  box-shadow: var(--color-tomato) 0px 15px 45px -10px;
+}
+
+.card__subscribe_container .card__image_container {
+  width: 45%;
+  height: 100%;
+  text-align: end;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card__subscribe_container .card__image_container img {
+  height: 100%;
+  object-fit: fill;
+}
+
+.card__subscribe_container .card__image_container .img_mobile {
+  display: none;
+}
+
+/* Success message */
+.success_message {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 450px;
+  height: 480px;
+  padding: 50px;
+  border-radius: 25px;
+  background-color: var(--color-white);
+  box-shadow: 5px 10px 20px 0px var(--color-dark-slate-grey);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s ease;
+}
+
+.success_message.active {
+  opacity: 1;
+  z-index: 10;
+}
+
+.success_message .success_message__title {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.success_message .success_message__description {
+  line-height: 1.5;
+}
+
+.success_message .success_message__description span {
+  font-weight: var(--font-weight-bold);
+}
+
+.success_message .form__button {
+  width: 100%;
+}
+
+@keyframes display_shake {
+  0% {
+    transform: translateX(-10px);
+  }
+
+  15% {
+    transform: translateX(5px);
+  }
+
+  30% {
+    transform: translateX(-5px);
+  }
+
+  45% {
+    transform: translateX(5px);
+  }
+
+  60% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+
+  90% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Media Queries */
+
+@media (width < 768px) {
+
+  body {
+    height: auto;
+  }
+
+  .card__subscribe_container {
+    flex-direction: column-reverse;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
+  .card__subscribe_container.success {
+    display: none;
+  }
+
+  .card__subscribe_container .card__info {
+    justify-content: flex-start;
+    width: 100%;
+    height: 65%;
+    padding-top: 40px;
+  }
+
+  .card__subscribe_container .card__info .card__info__title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .card__subscribe_container .card__info .card__info__description {
+    margin-bottom: 20px;
+  }
+
+  .card__subscribe_container .card__info .card__info__plus_items {
+    margin-bottom: 20px;
+  }
+
+  .card__subscribe_container .card__info .card__info__plus_items li {
+    align-items: flex-start;
+    gap: 20px;
+    line-height: 1.5;
+    padding-right: 20px;
+  }
+
+  .card__subscribe_container .card__info .card__info__plus_items li img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .card__subscribe_container .card__info .card__info__form .form__input__group .form__input,
+  .form__button {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .card__subscribe_container .card__image_container {
+    width: 100%;
+    height: 35%;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .card__subscribe_container .card__image_container .img_mobile {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card__subscribe_container .card__image_container .img_desktop {
+    display: none;
+  }
+
+  .success_message {
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    padding-inline: 30px;
+    padding-top: 15rem;
+    padding-bottom: 50px;
+    border-radius: 0;
+  }
+
+  .success_message .form__button {
+    margin-top: auto;
+  }
+}
+
+@media (width < 376px) {
+  .card__subscribe_container .card__info {
+    min-height: calc(100% - 300px);
+    padding-top: 30px;
+    font-size: 14px;
+  }
+
+  .card__subscribe_container .card__info .card__info__title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .card__subscribe_container .card__info .card__info__description {
+    margin-bottom: 15px;
+    padding-right: 10px;
+  }
+
+  .card__subscribe_container .card__info .card__info__plus_items {
+    margin-bottom: 10px;
+  }
+
+  .card__subscribe_container .card__info .card__info__plus_items li {
+    gap: 15px;
+    padding-right: 15px;
+  }
+
+  .card__subscribe_container .card__info .card__info__plus_items li img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .card__subscribe_container .card__info .card__info__form .form__input__group .form__input,
+  .form__button {
+    padding: 15px 20px;
+    border-radius: 10px;
+  }
+
+  .card__subscribe_container .card__image_container {
+    height: 300px;
+  }
+
+  .success_message {
+    padding-top: 8rem;
+  }
+}
