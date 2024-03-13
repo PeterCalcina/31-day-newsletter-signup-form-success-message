@@ -4,6 +4,7 @@ let input_email = document.querySelector('.form__input');
 
 let container_subscribe = document.querySelector('.card__subscribe_container');
 let success_message = document.querySelector('.success_message');
+let email_success_message = document.getElementById('email_success_message');
 
 function submitForm() {
 
@@ -14,8 +15,9 @@ function submitForm() {
   }
 
   if (validateEmail(input_email.value)) {
-    clearError();
+    email_success_message.textContent = input_email.value;
     showSuccessMessage();
+    clearError();
     input_email.value = '';
   } else {
     error_message.textContent = "Valid email is required";
