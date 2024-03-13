@@ -283,6 +283,7 @@ body {
 
   body {
     height: auto;
+    font-size: 17px;
   }
 
   .card__subscribe_container {
@@ -302,12 +303,12 @@ body {
   .card__subscribe_container .card__info {
     justify-content: flex-start;
     width: 100%;
-    height: 65%;
+    height: 62%;
     padding-top: 40px;
   }
 
   .card__subscribe_container .card__info .card__info__title {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     margin-bottom: 20px;
   }
 
@@ -331,6 +332,11 @@ body {
     height: 22px;
   }
 
+  .card__subscribe_container .card__info .card__info__form .form__input__group label,
+  .card__subscribe_container .card__info .card__info__form .form__input__group .error_message{
+    font-size: 13px;
+  }
+
   .card__subscribe_container .card__info .card__info__form .form__input__group .form__input,
   .form__button {
     padding: 20px;
@@ -339,7 +345,7 @@ body {
 
   .card__subscribe_container .card__image_container {
     width: 100%;
-    height: 35%;
+    height: 38%;
     border-radius: 0 0 15px 15px;
   }
 
@@ -355,17 +361,24 @@ body {
   }
 
   .success_message {
+    top: 0;
     gap: 30px;
     width: 100%;
+    min-height: 100dvh;
     height: 100%;
     padding-inline: 30px;
-    padding-top: 15rem;
+    padding-top: 8rem;
     padding-bottom: 50px;
     border-radius: 0;
   }
 
+  .success_message .success_message__title {
+    font-size: 42px;
+  }
+
   .success_message .form__button {
     margin-top: auto;
+    font-size: 17px;
   }
 }
 
@@ -373,17 +386,16 @@ body {
   .card__subscribe_container .card__info {
     min-height: calc(100% - 300px);
     padding-top: 30px;
-    font-size: 14px;
+    font-size: var(--font-size-paragraphs);
   }
 
   .card__subscribe_container .card__info .card__info__title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-bottom: 15px;
   }
 
   .card__subscribe_container .card__info .card__info__description {
     margin-bottom: 15px;
-    padding-right: 10px;
   }
 
   .card__subscribe_container .card__info .card__info__plus_items {
@@ -400,6 +412,11 @@ body {
     height: 20px;
   }
 
+  .card__subscribe_container .card__info .card__info__form .form__input__group label,
+  .card__subscribe_container .card__info .card__info__form .form__input__group .error_message{
+    font-size: 12px;
+  }
+
   .card__subscribe_container .card__info .card__info__form .form__input__group .form__input,
   .form__button {
     padding: 15px 20px;
@@ -411,6 +428,15 @@ body {
   }
 
   .success_message {
-    padding-top: 8rem;
+    padding-top: 7rem;
+  }
+
+  .success_message .success_message__title {
+    font-size: 2.45rem;
+  }
+
+  .success_message .success_message__description,
+  .success_message .form__button {
+    font-size: 15.5px;
   }
 }
